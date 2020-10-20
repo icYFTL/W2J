@@ -1,0 +1,10 @@
+version: "3"
+services:
+  server:
+    image: w2j
+    build: .
+    command: python3 W2J.py
+    ports:
+      - 6712:6712
+    network_mode: host
+    container_name: w2j
