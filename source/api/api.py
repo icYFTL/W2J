@@ -13,8 +13,9 @@ def on_run():
     except:
         return 'Invalid json', 400
 
-    if not data.get('key') or data.get('key') != config['key']:
-        return 'Invalid key', 400
+    if config['key']:
+        if not data.get('key') or data.get('key') != config['key']:
+            return 'Invalid key', 400
 
     if not data.get('image'):
         return 'Empty image passed', 400
